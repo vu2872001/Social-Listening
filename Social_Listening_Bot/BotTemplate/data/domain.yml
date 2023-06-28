@@ -1,0 +1,139 @@
+version: '3.1'
+
+intents:
+    - greet
+    - introduce_name
+    - ask_price
+    - complain
+    - goodbye
+
+entities:
+    - user_name
+    - product_name
+
+# slots:
+# name:
+#     type: text
+#     mappings:
+#         - type: from_entity
+#           entity: user_name
+# link:
+#     type: text
+#     mappings:
+#         - type: from_entity
+#           entity: link_name
+
+responses:
+    utter_greet:
+        - text: "Hi there! Nice to meet you. What's your name?"
+        - text: 'Hello! Welcome. May I know your name?'
+        - text: 'Hey, good to see you. Can you tell me your name please?'
+        - text: "Hi! I'm glad you're here. What should I call you?"
+        - text: "Hello there! What's your name?"
+        - text: "Hey, it's great to have you. What can I call you?"
+        - text: "Hi, how are you doing? What's your name?"
+        - text: 'Greetings! Can I get your name?'
+        - text: 'Hello, pleasure to meet you. What should I call you?'
+        - text: "Hey there! What's your name?"
+        - text: "Hi, I'm happy to see you. Can you introduce yourself?"
+        - text: 'Welcome! May I know your name please?'
+        - text: "Hey! I'm excited to chat with you. What's your name?"
+        - text: "Hello, it's good to have you. What can I call you?"
+        - text: "Hi, nice to meet you. What's your name?"
+        - text: "Greetings! I hope you're doing well. Can you tell me your name?"
+        - text: "Hey, it's great to see you. What should I call you?"
+        - text: "Hi there! How are you? What's your name?"
+        - text: "Hello, I'm glad you're here. May I know your name?"
+        - text: 'Hey, good to have you. Can you introduce yourself to me?'
+        # - text: 'Konbawa, Kimi no namae wa?'
+
+    utter_goodbye:
+        - text: 'Goodbye! It was nice talking to you.'
+        - text: 'Have a great day! Goodbye.'
+        - text: 'Thanks for chatting! Goodbye for now.'
+        - text: 'Take care and goodbye!'
+        - text: 'Bye for now! Have a good one.'
+        - text: 'See you later! Goodbye.'
+        - text: 'It was nice chatting with you. Goodbye!'
+        - text: 'Until next time, goodbye!'
+        - text: 'Have a wonderful day! Goodbye.'
+        - text: 'Farewell! It was a pleasure talking to you.'
+        - text: 'Goodbye and have a great day ahead!'
+        - text: 'See you soon! Goodbye.'
+        - text: 'Bye for now! Talk to you later.'
+        - text: 'Thank you for chatting with me! Goodbye.'
+        - text: 'It was great talking to you. Goodbye!'
+        - text: 'Take care and talk to you soon. Goodbye!'
+        - text: 'Have a nice day! Goodbye.'
+        - text: 'Bye! Stay safe.'
+        - text: 'Goodbye and keep in touch!'
+        - text: 'Thanks for the chat. Goodbye!'
+        - text: 'Bye'
+        - text: 'See you later!'
+        # - text: 'Mata kondo!'
+
+    utter_introduce_name:
+        - text: 'Hi {user_name}, are you interested in knowing the price of any of our products?'
+        - text: 'Welcome back {user_name}, would you like to know the price of any item?'
+        - text: 'Hi {user_name}, is there anything in particular you want to know the price of?'
+        - text: 'Hey there {user_name}, can I help you with the cost of any product?'
+        - text: 'Hello {user_name}, do you have any specific product in mind that you want to know the price of?'
+        - text: 'Hi {user_name}, would you like to know the price of any of our products?'
+        - text: 'Welcome back {user_name}, can I assist you with the price of any item?'
+        - text: 'Hi {user_name}, do you want to know the price of any product we have?'
+        - text: "Hey there {user_name}, is there anything you're interested in knowing the price of?"
+        - text: "Hello {user_name}, is there a specific product you're curious about the price of?"
+
+    utter_answer_price:
+        - text: 'The current price of {product_name} is 10000 USD.'
+        - text: '{product_name} costs 10000 USD.'
+        - text: 'The price of {product_name} is 10000 USD today.'
+        - text: '10000 USD is the current price of {product_name}.'
+        - text: 'If you want to buy {product_name}, it will cost you 10000 USD.'
+        - text: 'The cost of {product_name} is 10000 USD at the moment.'
+        - text: '{product_name} is priced at 10000 USD right now.'
+        - text: '10000 USD is how much you will need to pay for {product_name}.'
+        - text: 'The price for {product_name} is 10000 USD at the moment.'
+        - text: '10000 USD is the price of {product_name} as of now.'
+
+    utter_sorry:
+        - text: "I'm sorry to hear that our service did not meet your expectations."
+        - text: "I'm sorry to hear that you're not satisfied with our service."
+        - text: "I'm sorry that you had a negative experience with our service."
+        - text: "I'm sorry to hear that our service didn't meet your expectations."
+        - text: "I'm sorry if I'm not meeting your expectations."
+        - text: "I'm sorry if I'm not being very helpful."
+        - text: "I'm sorry if I'm taking too long to respond. I'll try to be quicker in the future."
+        - text: "I apologize if my previous response wasn't helpful."
+        - text: "I'm sorry if I'm not providing the level of assistance you need."
+        - text: "I'm sorry if I'm not answering your question adequately."
+        - text: "I'm sorry for any inconvenience."
+        - text: "I'm sorry, it looks like there's been a miscommunication."
+        - text: "I'm sorry if I'm not providing the information you're looking for."
+        - text: 'I apologize for any frustration.'
+        - text: 'I apologize for any inconvenience.'
+        - text: "I'm sorry that you've had a negative experience with our service"
+
+    # utter_greet_with_name:
+    #     - text: "Xin chào {name}!\n{name} cần Bot giúp gì không?"
+
+    # utter_goodbye_with_name:
+    #     - text: "Tạm biệt {name}!\nHãy quay lại với Bot khi {name} cần nhé!"
+
+actions:
+    # - action_get_link
+    # - action_utter_greet
+    # - action_utter_introduce_name
+    # - action_utter_answer_price
+    # - action_utter_sorry
+    # - action_utter_goodbye
+    - action_hello_world
+
+actions_mapping:
+    introduce_name:
+        - action_sentiment
+        - action_utter_introduce_name
+
+session_config:
+    session_expiration_time: 60
+    carry_over_slots_to_new_session: true

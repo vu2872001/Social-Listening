@@ -1,0 +1,45 @@
+.float-input-wrapper {
+  position: relative;
+  font-size: var(--app-font-size);
+}
+
+.float-input {
+  padding: 0.4rem 0rem;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid #d9d9d9;
+
+  &:focus,
+  &.ant-input-status-error {
+    box-shadow: none !important;
+  }
+
+  &.ant-input-status-error {
+    color: var(--error-color);
+  }
+}
+
+.float-label {
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 1.2rem;
+  top: 50%;
+  transition: 0.2s ease all;
+  transform: translateY(-50%);
+}
+
+.as-placeholder {
+  color: gray;
+  margin-left: -1.2rem;
+}
+
+.as-label {
+  top: -0.4rem;
+  font-size: 1.2rem !important;
+  margin-left: -1.2rem;
+}
+
+.as-label.active-label {
+  color: var(--light-primary-color);
+}

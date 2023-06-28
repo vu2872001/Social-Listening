@@ -1,0 +1,93 @@
+recipe: default.v1
+language: en
+pipeline:
+    - name: WhitespaceTokenizer
+    - name: RegexFeaturizer
+      case_sensitive: false
+      use_lookup_tables: true
+      use_regexes: true
+    - name: RegexEntityExtractor
+    - name: CRFEntityExtractor
+      features:
+          - ['low', 'title', 'upper', 'digit', 'pattern']
+    - name: LexicalSyntacticFeaturizer
+    - name: CountVectorsFeaturizer
+    - name: CountVectorsFeaturizer
+      analyzer: char_wb
+      min_ngram: 1
+      max_ngram: 4
+    - name: DIETClassifier
+      epochs: 100
+      constrain_similarities: true
+    - name: EntitySynonymMapper
+    - name: ResponseSelector
+      epochs: 100
+      constrain_similarities: true
+    - name: FallbackClassifier
+      threshold: 0.3
+      ambiguity_threshold: 0.1
+      # - name: WhitespaceTokenizer
+      # - name: CountVectorsFeaturizer
+      # - name: RegexFeaturizer
+      #   case_sensitive: false
+      #   use_lookup_tables: true
+      #   use_regexes: true
+      # - name: RegexEntityExtractor
+      # - name: CRFEntityExtractor
+      # - name: EntitySynonymMapper
+      # - name: DIETClassifier
+      #   epochs: 100
+policies:
+    - name: MemoizationPolicy
+    - name: RulePolicy
+    - name: UnexpecTEDIntentPolicy
+      max_history: 5
+      epochs: 100
+    - name: TEDPolicy
+      max_history: 5
+      epochs: 100
+      constrain_similarities: true
+
+assistant_id: 20230327-143313-formal-bisector
+# recipe: default.v1
+# language: en
+
+# pipeline:
+#     - name: WhitespaceTokenizer
+#     - name: RegexFeaturizer
+#       case_sensitive: false
+#       use_lookup_tables: true
+#       use_regexes: true
+#     - name: RegexEntityExtractor
+#     - name: CRFEntityExtractor
+#     - name: CountVectorsFeaturizer
+#     - name: DIETClassifier
+#       backend: 'tensorflow'
+#       epochs: 100
+#     - name: EntitySynonymMapper
+#     - name: 'ResponseSelector'
+#       epochs: 100
+# # policies: null
+# # # No configuration for policies was provided. The following default policies were used to train your model.
+# # # If you'd like to customize them, uncomment and adjust the policies.
+# # # See https://rasa.com/docs/rasa/policies for more information.
+# #   - name: MemoizationPolicy
+# #   - name: RulePolicy
+# #   - name: UnexpecTEDIntentPolicy
+# #     max_history: 5
+# #     epochs: 100
+# #   - name: TEDPolicy
+# #     max_history: 5
+# #     epochs: 100
+# #     constrain_similarities: true
+# assistant_id: 20230327-143313-formal-bisector
+
+# policies:
+#     - name: 'MemoizationPolicy'
+#     # - name: 'FallbackPolicy'
+#     # - name: 'FormPolicy'
+#     # - name: 'MappingPolicy'
+
+# interpreter:
+#     name: 'ABC'
+#     model_path: 'models'

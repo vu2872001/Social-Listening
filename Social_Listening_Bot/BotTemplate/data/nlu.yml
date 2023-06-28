@@ -1,0 +1,1262 @@
+version: '3.1'
+
+nlu:
+    - lookup: user_name
+      examples: |
+          - Zeta
+          - Emma
+          - Olivia
+          - Ava
+          - Isabella
+          - Sophia
+          - Mia
+          - Charlotte
+          - Amelia
+          - Harper
+          - Evelyn
+          - Abigail
+          - Emily
+          - Elizabeth
+          - Scarlett
+          - Madison
+          - Victoria
+          - Chloe
+          - Grace
+          - Natalie
+          - Lily
+          - Hannah
+          - Lila
+          - Brooklyn
+          - Stella
+          - Leah
+          - Penelope
+          - Aurora
+          - Riley
+          - Claire
+          - Eleanor
+          - Audrey
+          - Caroline
+          - Savannah
+          - Kennedy
+          - Addison
+          - Avery
+          - Mackenzie
+          - Maya
+          - Annabelle
+          - Zoey
+          - Peyton
+          - Reagan
+          - Aubrey
+          - Taylor
+          - Violet
+          - Skylar
+          - Alexa
+          - Nora
+          - Paisley
+          - Samantha
+          - Layla
+          - Hailey
+          - Bella
+          - Ellie
+          - Aria
+          - Kaylee
+          - Piper
+          - Allison
+          - Sadie
+          - Autumn
+          - Genesis
+          - Serenity
+          - Nevaeh
+          - Arianna
+          - Emery
+          - Gianna
+          - Naomi
+          - Brielle
+          - Madelyn
+          - Melody
+          - Aaliyah
+          - Eden
+          - Lydia
+          - Mary
+          - Molly
+          - Faith
+          - Gabriella
+          - Isabelle
+          - Jade
+          - Kaitlyn
+          - Alexa
+          - Caroline
+          - Clara
+          - Julia
+          - Lauren
+          - Maggie
+
+    - lookup: product_name
+      examples: |
+          - iPhone 13
+          - Gundam
+          - Samsung Galaxy S21
+          - Google Pixel 6
+          - OnePlus 9
+          - Xiaomi Mi 12
+          - Huawei Mate 50
+          - Oppo Find X4
+          - Vivo X70
+          - Sony Xperia 1 III
+          - LG V70 (discontinued)
+          - Motorola Edge 20
+          - Nokia X20
+          - Asus ROG Phone 5
+          - Apple iPhone SE (2020)
+          - Samsung Galaxy Note 20 Ultra
+          - Xiaomi Redmi Note 10
+          - Google Pixel 5
+          - OnePlus Nord
+          - Huawei P40 Pro
+          - Oppo Reno5
+          - Vivo X60 Pro
+          - Sony Xperia 5 II
+          - LG Velvet
+          - Motorola Moto G9
+          - Nokia 8.3
+          - Asus Zenfone 8
+          - Apple iPhone 12 mini
+          - Samsung Galaxy A71
+          - Xiaomi Poco X3 NFC
+          - Google Pixel 4a
+          - OnePlus 8T
+          - Huawei Mate 40 Pro
+          - Oppo A93
+          - Vivo Y51
+          - Sony Xperia 10 III
+          - LG K92
+          - Motorola Moto G8
+          - Nokia 7.2
+          - Asus Zenfone 7
+          - Apple iPhone 11
+          - Samsung Galaxy S20
+          - Xiaomi Mi 10T Pro
+          - Google Pixel 4
+          - OnePlus 8
+          - Huawei P30 Pro
+          - Oppo Reno4
+          - Vivo X50 Pro
+          - Sony Xperia 1 II
+          - Barbie Dolls
+          - LEGO
+          - Action Figures
+          - Play-Doh
+          - Hot Wheels Cars
+          - Transformers
+          - Fisher-Price Little People
+          - Dollhouses
+          - Board Games
+          - My Little Pony
+          - Play Kitchen Sets
+          - NERF Blasters
+          - Stuffed Animals
+          - Building Blocks
+          - Arts and Crafts Supplies
+          - Remote Control Cars
+          - Magnetic Building Sets
+          - Rubik's Cube
+          - Train Sets
+          - Musical Instruments
+          - Play Tents and Tunnels
+          - Finger Puppets
+          - Puzzles
+          - Play Food Sets
+          - Bath Toys
+          - Dress-Up Costumes
+          - Kinetic Sand
+          - Educational Toys
+          - Doll Strollers
+          - Toy Cars and Trucks
+          - Play Tool Sets
+          - Play Mat Sets
+          - Play-Doh Kitchen Creations
+          - Superhero Action Figures
+          - Magnetic Drawing Boards
+          - Baby Dolls
+          - Doctor Playsets
+          - Building Sets for Kids
+          - Play Cash Registers
+          - Tricycles and Bikes
+          - Balance Bikes
+          - Wooden Blocks
+          - Toy Story Action Figures
+          - Glow in the Dark Toys
+          - Play Garages and Parking Lots
+          - Bubble Machines
+          - Doll Accessories
+          - Stacking Toys
+          - Play Makeup Sets
+          - Play Silks and Scarves
+          - Water Guns
+          - Toy Boats
+          - Foam Building Blocks
+          - Hand Puppets
+          - Ride-On Toys
+          - Play Tea Sets
+          - Play Grocery Sets
+          - Airplane Toys
+          - Science Experiment Kits
+          - Magnetic Tiles
+          - Toy Tool Sets
+          - Activity Cubes
+          - Toy Microscopes
+          - Electronic Learning Toys
+          - Tegu Blocks
+          - Yo-Yos
+          - Magic Kits
+          - Miniature Toy Figures
+          - Play Cameras
+          - Chalkboards
+          - Play Cashier Sets
+          - Toy Swords and Shields
+          - Pull-Along Toys
+          - Fidget Toys
+          - Foam Ball Pit Sets
+          - Wooden Train Sets
+          - Toy Musical Instruments
+          - Play Cash Registers
+          - Robot Toys
+          - Bath Paints and Crayons
+          - Play Beauty Sets
+          - Toy Dump Trucks
+          - Toy Excavators
+          - Board Games for Kids
+          - Marbles
+          - Toy Grocery Carts
+          - Play Dish Sets
+          - Toy Spaceships
+          - Play Vacuum Cleaners
+          - Play Microwaves
+          - Foam Swords
+          - Play Food Trucks
+          - Tea Party Sets
+          - Wooden Puzzles
+          - Dress-Up Jewelry Sets
+          - Toy Cash Registers
+          - Sticker Sets
+          - Play Mailboxes
+          - Play BBQ Sets
+          - Toy Roller Coasters
+          - LG G8 ThinQ
+          - Motorola Moto G7
+          - Nokia 6.2
+          - Asus Zenfone 6
+          - Apple iPhone XS
+          - Samsung Galaxy S10
+          - Xiaomi Mi 9
+          - Google Pixel 3a
+          - OnePlus 7T
+          - Huawei Mate 30 Pro
+          - Oppo A9 (2020)
+          - Vivo S1 Pro
+          - Sony Xperia 5
+          - LG G7 ThinQ
+          - Motorola Moto G6
+          - Nokia 7.1
+          - Asus Zenfone 5Z
+          - Apple iPhone XR
+          - Samsung Galaxy Note 9
+          - Xiaomi Mi 8
+          - Google Pixel 3
+          - OnePlus 7
+          - Huawei P20 Pro
+          - Oppo A5 (2020)
+          - Vivo Y15
+          - Sony Xperia XZ3
+          - LG V40 ThinQ
+          - Motorola Moto Z3 Play
+          - Nokia 5.1
+          - Asus Zenfone 5
+          - Apple iPhone X
+          - Samsung Galaxy S9
+          - Xiaomi Redmi Note 5
+          - Google Pixel 2
+          - OnePlus 6T
+          - Huawei Honor 10
+          - Oppo R15 Pro
+          - Vivo V11 Pro
+          - Sony Xperia XZ2
+          - LG V30
+          - Motorola Moto G5 Plus
+          - Nokia 3.1
+          - Asus Zenfone 4
+          - Apple iPhone 8
+          - Samsung Galaxy Note 8
+          - Xiaomi Mi 6
+          - Google Pixel
+          - OnePlus 6
+          - Huawei P10 Plus
+          - Oppo F11 Pro
+          - Vivo Y17
+          - Sony Xperia XZ1
+
+    - intent: greet
+      examples: |
+          - Hi there!
+          - Hello!
+          - Hey!
+          - Good morning!
+          - Good afternoon!
+          - Good evening!
+          - Howdy!
+          - Greetings!
+          - Salutations!
+          - What's up?
+          - Hi, how are you?
+          - Hey there, how are things?
+          - Good to see you!
+          - Nice to meet you!
+          - It's great to see you!
+          - Welcome!
+          - Glad to see you!
+          - How's it going?
+          - How are you doing?
+          - How have you been?
+          - Long time no see!
+          - What's new?
+          - What's happening?
+          - How's everything?
+          - Hey, what's going on?
+          - What have you been up to?
+          - It's good to be here!
+          - What's happening, my friend?
+          - How do you do?
+          - Howdy, partner!
+          - Hiya!
+          - Yo!
+          - Sup?
+          - What's good?
+          - Hi, stranger!
+          - Good day to you!
+          - Hey, what's up?
+          - Hey, how's your day going?
+          - Nice weather we're having!
+          - How's your week been?
+          - Hi, how's life treating you?
+          - How's your day been?
+          - Hi, how's everything going?
+          - Hi, what's crackin'?
+          - What's cooking?
+          - Hey, how are you feeling today?
+          - Hi, how's the family?
+          - Hi, how's work going?
+          - Hey, what's on your mind?
+          - Hi, how's your day been so far?
+          - Hey, what are you up to today?
+          - How's your day shaping up?
+          - Hi, how's your morning?
+          - Hey, how's your afternoon?
+          - Hi, how are you doing today?
+          - Hey, what's the latest?
+          - Hi, how's your day treating you?
+          - Hey, how's your weekend been?
+          - Hi, how's your day going so far?
+          - Hey, what have you been up to lately?
+          - Hi, how are you holding up?
+          - Hey, what's happening in your world?
+          - Hi, how's your day been going?
+          - Hey, what's been going on with you?
+          - Hi, how are you feeling today?
+          - Hey, how's your day looking?
+          - Hi, how's your day unfolding?
+          - Hey, what's been happening in your life?
+          - Hi, how are you holding up lately?
+          - Hey, what's been on your mind lately?
+          - Hi, how's your week shaping up?
+          - Hey, how's your day progressing?
+          - Hi, how's your day panning out?
+          - Hey, what's happening with you today?
+          - Hi, how's your day unfolding so far?
+          - Hey, what's been happening with you lately?
+          - Hi, how's your day moving along?
+          - Hey, what's new with you?
+          - Hi, how's your day been developing?
+          - Hey, how's everything in your world?
+          - Hi, how are you faring today?
+          - Hey, what's going on in your life?
+          - Hi, how's everything in your universe?
+          - Hey, how's your day been so far?
+          - Hi, what's the news?
+          - Hey, what's happening with your day?
+          - Hi, how's your day been progressing?
+          - Hey, what's been happening in your world lately?
+          - Hi, how's your day shaping up so far?
+          - Hey, what's been happening with your week?
+          - Hi, how's your day going along so far?
+          - Hey, what's new in your life?
+          - Hi, how's your day been coming along?
+          - Hey, what's been happening with your day today?
+
+    - intent: goodbye
+      examples: |
+          - See you later!
+          - Bye bye!
+          - Take care!
+          - Goodbye!
+          - Have a great day!
+          - See you soon!
+          - Farewell!
+          - Catch you later!
+          - Have a nice day!
+          - So long!
+          - Until next time!
+          - Peace out!
+          - See ya!
+          - Adios!
+          - Bye for now!
+          - Have a good one!
+          - Later!
+          - See you around!
+          - It was nice seeing you!
+          - I'll talk to you later!
+          - Goodnight!
+          - Hasta la vista!
+          - Toodles!
+          - See you tomorrow!
+          - Have a safe trip!
+          - Bye!
+          - Have a great weekend!
+          - I'll be on my way now!
+          - Take it easy!
+          - See you in a bit!
+          - Have a good night!
+          - Talk to you later!
+          - Cheers!
+          - Later gator!
+          - Have a pleasant evening!
+          - Goodbye for now!
+          - I'm off!
+          - See you next time!
+          - Be well!
+          - See you next week!
+          - Until we meet again!
+          - Stay safe!
+          - Bye bye for now!
+          - Keep in touch!
+          - Have a lovely day!
+          - I'm out!
+          - I'm heading out!
+          - It's been nice knowing you!
+          - Until then!
+          - Peace!
+          - See you later alligator!
+          - To infinity and beyond!
+          - I gotta go!
+          - Take care of yourself!
+          - I'll catch up with you later!
+          - Goodbye, friend!
+          - Have a blessed day!
+          - Bye for the time being!
+          - It was good seeing you!
+          - Until later!
+          - Bye for the moment!
+          - I'm leaving now!
+          - Enjoy your day!
+          - Bye for the day!
+          - Goodbye, my friend!
+          - It's been a pleasure!
+          - See you next month!
+          - Ciao!
+          - Adieu!
+          - See you next year!
+          - Bye for now, talk to you soon!
+          - I'm outta here!
+          - I'm gone!
+          - Until we see each other again!
+          - I'm on my way!
+          - Have a great evening!
+          - It was nice talking to you!
+          - Take care and talk to you later!
+          - Bye for now, see you next week!
+          - Until next time, goodbye!
+          - Have a fantastic day!
+          - It's been great talking to you!
+          - Bye bye, take care!
+          - See you next time, have a good one!
+          - Bye bye, catch you later!
+          - Until then, take care!
+          - Bye for now, have a good day!
+          - It was nice catching up with you!
+          - I'm off now, goodbye!
+          - Until next time, stay safe!
+          - Bye bye, have a great day!
+          - Have a wonderful weekend!
+          - Sayonara!
+          - Fare thee well!
+          - Until next time!
+          - Have a safe trip!
+          - Good luck!
+          - Have a wonderful evening!
+          - It's been a pleasure!
+          - Take it easy!
+          - Stay safe!
+          - I'll miss you!
+          - Adios!
+          - Thanks for chatting!
+          - Have a fantastic week!
+          - See you tomorrow!
+          - Keep in touch!
+          - Have a good weekend!
+          - Hope to see you again soon!
+          - Take care of yourself!
+          - Keep up the good work!
+          - I wish you all the best!
+          - It was great talking to you!
+          - Have a nice day!
+          - Safe travels!
+          - Keep smiling!
+          - See you later, alligator!
+          - I hope everything goes well for you!
+          - Have a pleasant evening!
+          - Have a great night!
+          - I look forward to our next conversation!
+          - Bon voyage!
+          - You're the best!
+          - Don't be a stranger!
+          - Take care and stay healthy!
+          - I hope you have a wonderful day!
+          - Keep up the great work!
+          - I appreciate you!
+          - Have a safe and happy trip!
+          - Take care and talk to you soon!
+          - Have a successful day!
+          - Keep being awesome!
+          - Best of luck in all your endeavors!
+          - Until we meet again!
+          - Take care of yourself and your loved ones!
+          - Have a good one and see you later!
+          - Stay in touch and take care!
+          - Have a great rest of your day!
+          - See you around!
+          - Have a pleasant day!
+          - Enjoy the rest of your week!
+          - I hope you have a great time!
+          - Keep up the good vibes!
+          - Take care and have a safe journey!
+          - Have a great vacation!
+          - Keep on shining!
+          - I hope you achieve everything you desire!
+          - Take care and be well!
+          - Have a lovely evening!
+          - See you next time!
+          - Stay awesome!
+          - It's always a pleasure talking to you!
+          - I'll be thinking of you!
+          - Until we talk again!
+          - Keep on being amazing!
+          - Have a wonderful time!
+          - I wish you happiness and success!
+          - Keep up the great job!
+          - It was nice catching up with you!
+          - Have a wonderful day ahead!
+          - Keep doing what you love!
+          - Don't forget to smile!
+          - Have a happy and healthy life!
+          - Keep shining!
+          - See you soon and take care!
+          - Have a great afternoon!
+          - Keep striving for greatness!
+          - Until next time, my friend!
+          - Stay positive and motivated!
+          - I hope you find everything you're looking for!
+          - Take care of yourself and stay blessed!
+          - Have a productive day!
+          - Keep up the amazing work!
+          - Have a safe and fun weekend!
+          - Take care of your loved ones and yourself!
+          - Have a great day at work!
+          - Keep being you!
+
+    - intent: introduce_name
+      examples: |
+          - I am {user_name}.
+          - My name is {user_name}.
+          - You can call me {user_name}.
+          - I go by {user_name}.
+          - {user_name}, that's my name.
+          - Hi, my name is {user_name}.
+          - The name's {user_name}, nice to meet you.
+          - Nice to meet you, I'm {user_name}.
+          - Call me {user_name}.
+          - Hey there, {user_name} here.
+          - My friends call me {user_name}.
+          - I'm also known as {user_name}.
+          - The name's {user_name}, and you are?
+          - Hi, I'm {user_name}.
+          - I'm {user_name}, what's up?
+          - My name's {user_name}, what's yours?
+          - Hello, I'm {user_name}.
+          - You can refer to me as {user_name}.
+          - My name is actually {user_name}.
+          - {user_name}, that's my given name.
+          - Nice to meet you, I'm {user_name} - what's your name?
+          - You can call me by my name - {user_name}.
+          - I'm {user_name}, pleasure to meet you.
+          - Hi, my name is {user_name}, what can I do for you?
+          - The name's {user_name}, and you?
+          - Call me {user_name}, that's what everyone else does.
+          - My name is {user_name}, what's yours?
+          - You can call me {user_name}, what's your name?
+          - Nice to meet you, I'm {user_name} - what brings you here?
+          - I'm {user_name}, how can I help you?
+          - You can refer to me as {user_name}, what can I assist you with?
+          - My name is {user_name}, nice to meet you.
+          - Call me {user_name}, that's my name.
+          - I'm {user_name}, what's going on?
+          - Hi there, {user_name} speaking.
+          - You can address me as {user_name}.
+          - I'm {user_name}, what's your name?
+          - My name is {user_name}, what's up?
+          - You can call me {user_name}, pleased to meet you.
+          - Nice to meet you, I'm {user_name}, what brings you here today?
+          - I go by {user_name}, what do you need help with?
+          - Call me {user_name}, that's who I am.
+          - You can refer to me as {user_name}, what's on your mind?
+          - I'm {user_name}, how may I assist you?
+          - Hi, I'm {user_name}, what can I do for you today?
+          - My name is {user_name}, nice to make your acquaintance.
+          - You can call me {user_name}, what's your name?
+          - I go by {user_name}, what brings you to me?
+          - Call me {user_name}, that's my name.
+          - I'm {user_name}, how can I help you today?
+          - Nice to meet you, I'm {user_name} - what can I do for you?
+          - My name is {user_name}, what's on your mind?
+          - You can refer to me as {user_name}, what do you need help with?
+          - I'm {user_name}, nice to meet you.
+          - Hi, I'm {user_name}, what's going on?
+          - You can call me {user_name}, what can I assist you with?
+          - Call me {user_name}, how may I help you today?
+          - I'm {user_name}, what brings you here?
+          - My name is {user_name}, pleased to meet you.
+          - You can refer to me as {user_name}, what can I do for you today?
+          - I go by {user_name}, what's up?
+          - Nice to meet you, I'm {user_name}, what brings you to me?
+          - Call me {user_name},
+          - [Azu](user_name)
+          - [Ark]{"entity": "user_name"}
+          - Hi, my name is {user_name}. Nice to meet you.
+          - I'm {user_name}, and I'm here to help.
+          - I am called {user_name}.
+          - {user_name} is my name.
+          - You can call me {user_name}.
+          - Hi, I'm {user_name}.
+          - Hey there, the name's {user_name}.
+          - Greetings, I go by {user_name}.
+          - Nice to meet you, I'm {user_name}.
+          - Howdy, I'm {user_name}.
+          - The name is {user_name}, pleased to make your acquaintance.
+          - Hello, my name is {user_name}.
+          - It's nice to meet you, my name is {user_name}.
+          - Hello there, I'm {user_name}.
+          - Bonjour, je m'appelle {user_name} (Hello, my name is {user_name} in French).
+          - Hola, me llamo {user_name} (Hello, my name is {user_name} in Spanish).
+          - Hallo, ich heiße {user_name} (Hello, my name is {user_name} in German).
+          - Salut, je suis {user_name} (Hi, I am {user_name} in French).
+          - Hi, my name is {user_name}, what's yours?
+          - You're talking to {user_name}, how can I help you?
+          - {user_name} here, how can I assist you today?
+          - At your service, I'm {user_name}.
+          - Pleased to meet you, I'm {user_name}, and you are?
+          - My moniker is {user_name}, how may I assist you?
+          - Good day, I'm {user_name}.
+          - Greetings, I'm {user_name}, and you are?
+          - Yo, I'm {user_name}.
+          - You can call me {user_name}, how can I help you?
+          - My name is {user_name}, what can I do for you?
+          - Hey, I'm {user_name}, what brings you here?
+          - Hello, I'm {user_name}, how may I assist you?
+          - Hi, I'm {user_name}, what can I help you with?
+          - The name's {user_name}, how can I be of service?
+          - Hi there, I'm {user_name}, what's on your mind?
+          - G'day, I'm {user_name}, how can I assist you?
+          - Hi, my name is {user_name}, nice to meet you.
+          - You've reached {user_name}, how may I assist you?
+          - Hello, I'm {user_name}, and you are?
+          - Hey, I'm {user_name}, what's up?
+          - Hello, I'm {user_name}, what can I help you with?
+          - You're talking to {user_name}, how can I help you today?
+          - Howdy, I'm {user_name}, and you are?
+          - Bonjour, my name is {user_name}, comment ça va? (Hello, my name is {user_name}, how are you doing? in French).
+          - Hola, mi nombre es {user_name}, cómo estás? (Hello, my name is {user_name}, how are you doing? in Spanish).
+          - Hallo, mein Name ist {user_name}, wie geht's? (Hello, my name is {user_name}, how are you doing? in German).
+          - Salut, je m'appelle {user_name}, comment vas-tu? (Hi, I am {user_name}, how are you doing? in French).
+          - It's {user_name}, nice to make your acquaintance.
+          - Hello, this is {user_name}, how may I assist you?
+          - My name is {user_name}, what brings you here today?
+          - Hello, I'm {user_name}, pleased to meet you.
+          - Hey, it's {user_name}, what can I do for you?
+
+    - intent: ask_price
+      examples: |
+          - What is the price of {product_name}?
+          - How much does {product_name} cost?
+          - Can you tell me the price of {product_name}?
+          - How is the price of {product_name} today?
+          - What's the current price of {product_name}?
+          - I'm interested in knowing the cost of {product_name}
+          - How much do I have to pay for {product_name}?
+          - What's the going rate for {product_name} these days?
+          - Is {product_name} expensive or affordable?
+          - Can you give me the pricing details of {product_name}?
+          - How much is {product_name} worth?
+          - Could you provide me with the price of {product_name}?
+          - What's the price tag for {product_name}?
+          - How expensive is {product_name}?
+          - What's the cost of {product_name}?
+          - How much is the selling price of {product_name}?
+          - How much money do I need to buy {product_name}?
+          - Can you tell me how much {product_name} costs?
+          - What is the current price range for {product_name}?
+          - How much will I have to pay for {product_name}?
+          - What is the current market value of {product_name}?
+          - How much should I budget for {product_name}?
+          - What's the average price for {product_name}?
+          - How much does {product_name} go for these days?
+          - What's the asking price for {product_name}?
+          - How much does it cost to buy {product_name}?
+          - What's the retail price for {product_name}?
+          - How much is the price for {product_name} at the moment?
+          - How much is {product_name} priced at currently?
+          - How much is {product_name} going for right now?
+          - What's the cost of purchasing {product_name}?
+          - How much is the current selling price of {product_name}?
+          - What's the selling price of {product_name} right now?
+          - What is the current asking price for {product_name}?
+          - Can you tell me the cost of {product_name} at the moment?
+          - What's the price for {product_name} in the market now?
+          - How much money do I need to spend to get {product_name}?
+          - What is the present-day price for {product_name}?
+          - Can you let me know the price of {product_name} currently?
+          - What's the market price for {product_name} right now?
+          - How much does it cost to purchase {product_name}?
+          - What is the rate of {product_name} in the market today?
+          - How much is the latest selling price of {product_name}?
+          - What's the price of {product_name} in the current market?
+          - How much is {product_name} priced at the moment?
+          - How much does {product_name} cost these days?
+          - What's the going cost for {product_name} right now?
+          - Can you tell me the current pricing for {product_name}?
+          - What's the current rate of {product_name}?
+          - How much is the latest price for {product_name}?
+          - What is the current value of {product_name}?
+          - How much does {product_name} cost on average?
+          - What's the cost of {product_name} in today's market?
+          - How much money do I need to pay for {product_name}?
+          - What's the latest price tag for {product_name}?
+          - Can you tell me the current cost of {product_name}?
+          - What's the current going price for {product_name}?
+          - How much does {product_name} usually cost?
+          - What's the cost of {product_name} on the market today?
+          - Can you provide me with the latest pricing for {product_name}?
+          - How much money should I expect to spend on {product_name}?
+          - What's the current price point for {product_name}?
+          - What is the estimated cost of {product_name}?
+          - How much is {product_name} valued at currently?
+          - What is the price range for {product_name}?
+          - How much does {product_name} sell for in stores?
+          - Can you tell me how much {product_name} is worth right now?
+          - What's the typical cost of {product_name}?
+          - How much would I need to pay for {product_name}?
+          - What's the current selling price for {product_name}?
+          - How much is the price for {product_name} these days?
+          - What's the price of {product_name} on the market?
+          - Can you give me a ballpark figure for the cost of {product_name}?
+          - How much does {product_name} go for on average?
+          - What is the market price for {product_name}?
+          - How much is {product_name} currently selling for?
+          - What's the cost of {product_name} per unit?
+          - Can you tell me the price range for {product_name} in different stores?
+          - How much is the wholesale price for {product_name}?
+          - What's the maximum price I should expect to pay for {product_name}?
+          - What's the minimum price I should expect to pay for {product_name}?
+          - Can you tell me the current price of {product_name} in my area?
+          - What's the current cost of {product_name} in my region?
+          - How much is the market rate for {product_name}?
+          - What's the current price of {product_name} in the nearest store?
+          - Can you tell me the price per unit of {product_name}?
+          - What's the selling price range for {product_name}?
+          - How much is the retail price for {product_name} in different locations?
+          - What's the price for {product_name} on online shopping platforms?
+          - Can you tell me the cost of {product_name} from different manufacturers?
+          - How much does {product_name} cost compared to similar {product_name}s?
+          - What's the market value of {product_name}?
+          - Can you provide me with the latest price trends for {product_name}?
+          - How much is the wholesale cost for {product_name}?
+          - What's the current going rate for {product_name} in the market?
+          - What's the estimated price range for {product_name}?
+          - Can you tell me the price history of {product_name} over the past year?
+          - How much is {product_name} priced compared to its competitors?
+          - What's the average cost of {product_name} in the market?
+          - Can you give me the pricing details for {product_name} from different retailers?
+          - What is the current rate per unit for {product_name}?
+          - How much does {product_name} cost in bulk?
+          - What's the current selling price range for {product_name} on different platforms?
+          - Can you tell me the current value of {product_name} in the market?
+          - What's the asking cost for {product_name} these days?
+          - How much is the market price of {product_name} affected by inflation?
+          - How much will it cost to purchase {product_name} including taxes?
+          - Can you tell me the current market price for {product_name} in other countries?
+          - What's the price of {product_name} in the international market?
+          - How much does {product_name} cost from different suppliers?
+          - What's the current price of {product_name} for different sizes/quantities?
+          - Can you give me the current price of {product_name} from various online retailers?
+          - What's the current market rate for {product_name} in different regions?
+          - How much is the total cost of {product_name} including shipping and handling?
+          - What is the price of {product_name} in comparison to its {product_name}ion cost?
+          - Can you provide me with the price range for {product_name} from different distributors?
+          - How much does {product_name} cost from different manufacturers for bulk orders?
+          - What is the current selling price for {product_name} on various e-commerce websites?
+          - How much is the current wholesale cost for {product_name} for retailers?
+          - What is the price of {product_name} during discount sales?
+          - Can you give me the pricing history for {product_name} over the past five years?
+          - What is the current price of {product_name} in the black market?
+          - How much is the cost of {product_name} compared to its {product_name}ion cost?
+          - What is the price of {product_name} for different colors/variants?
+          - How much does {product_name} cost for different shipping options?
+          - What is the cost of {product_name} for different payment methods?
+          - What is the price of {product_name} for different warranty periods?
+          - Can you provide me with the cost of {product_name} with installation?
+          - What's the price of {product_name} with custom modifications?
+          - Can you tell me the cost of {product_name} with additional accessories?
+          - What's the price of {product_name} on special occasions like Black Friday or Cyber Monday?
+          - How much does {product_name} cost for different customer segments like students or senior citizens?
+          - What's the price of {product_name} with different financing options?
+          - Can you give me the pricing information for {product_name} from different marketplaces?
+          - How much does {product_name} cost during seasonal sales like Christmas or Thanksgiving?
+          - What is the current exchange rate for {product_name} in different currencies?
+          - Can you tell me the price of {product_name} with different shipping durations?
+          - How much is the cost of {product_name} for different {product_name} bundles?
+          - What's the price of {product_name} with different packaging options?
+          - Can you provide me with the current price for {product_name} from different wholesalers?
+          - How much does {product_name} cost for different order sizes or frequencies?
+          - What is the current price of {product_name} with different customization options?
+          - What's the cost of {product_name} during flash sales or limited-time offers?
+          - Can you tell me the price of {product_name} with different gift wrapping options?
+          - How much is the cost of {product_name} with different {product_name} demo or trial options?
+          - What is the price of {product_name} with different loyalty or rewards program benefits?
+          - Can you give me the pricing information for {product_name} from different loyalty or rewards program tiers?
+          - What's the price of the {product_name}?
+          - How much does it cost?
+          - Can you tell me the price?
+          - What's the current pricing?
+          - How much will I have to pay?
+          - What is the price for this item?
+          - Can you give me the cost of the {product_name}?
+          - What's the amount I have to pay?
+          - How much is the {product_name} worth?
+          - What is the price for the service?
+          - Can you provide me with the pricing information?
+          - What's the fee for this {product_name}?
+          - How much do I need to spend?
+          - What is the cost for this service?
+          - Can you tell me the price for this package?
+          - What's the charge for this item?
+          - How much is the price tag?
+          - What is the selling price for this {product_name}?
+          - Can you give me the current price?
+          - What's the price range for this {product_name}?
+          - How much will it cost me to buy this {product_name}?
+          - What is the total cost for this service?
+          - Can you tell me the price for different plans?
+          - What's the pricing structure for this {product_name}?
+          - How much does this item cost per unit?
+          - What is the hourly rate for this service?
+          - Can you give me the pricing details for this {product_name}?
+          - What's the cost of the {product_name} for bulk orders?
+          - How much will I save if I purchase this {product_name} in bulk?
+          - What is the price for a subscription to this service?
+          - Can you tell me the price for different membership levels?
+          - What's the cost of the {product_name} with additional features?
+          - How much will I have to pay for extra services?
+          - What is the price for the premium version of this {product_name}?
+          - Can you give me the pricing information for different tiers?
+          - What's the cost for a trial period of this service?
+          - How much does it cost to upgrade to a higher plan?
+          - What is the price for an extended warranty on this {product_name}?
+          - Can you tell me the cost of shipping for this item?
+          - What's the cost of delivery for this {product_name}?
+          - How much will it cost to have this item shipped to my location?
+          - What is the price for expedited shipping?
+          - Can you give me the pricing information for different shipping options?
+          - What's the cost for installation of this {product_name}?
+          - How much will I have to pay for professional installation?
+          - What is the price for a maintenance plan for this {product_name}?
+          - Can you tell me the cost for repair services?
+          - What's the price for a replacement part?
+          - How much will it cost to have this item repaired?
+          - What is the cost for a technical support subscription for this {product_name}?
+          - What is the price of {product_name}?
+          - How much does the {product_name} cost?
+          - What's the current pricing for the {product_name}?
+          - Can you tell me the price for the {product_name}?
+          - What's the cost of {product_name}?
+          - Could you let me know how much {product_name} costs?
+          - How much would I have to pay for {product_name}?
+          - What's the going rate for {product_name}?
+          - How much do I need to spend to buy {product_name}?
+          - Could you give me an idea of the price of {product_name}?
+          - How much is {product_name} worth?
+          - What is the current price of {product_name}?
+          - Can you tell me how much {product_name} costs these days?
+          - What is the price tag of {product_name}?
+          - Could you tell me the cost of {product_name}?
+          - How much should I expect to pay for {product_name}?
+          - What's the price range for {product_name}?
+          - What's the ballpark figure for {product_name}?
+          - How much does {product_name} typically cost?
+          - What's the retail price of {product_name}?
+          - Could you give me an estimate for the cost of {product_name}?
+          - What's the asking price for {product_name}?
+          - What's the MSRP for {product_name}?
+          - How much would I have to shell out for {product_name}?
+          - What is the cost of the {product_name}?
+          - Can you tell me the price for the {product_name} in your store?
+          - What is the cost of the {product_name} in your shop?
+          - What is the current pricing for the {product_name} in your store?
+          - Can you tell me how much the {product_name} costs in your shop?
+          - How much would I have to spend to buy the {product_name} from your store?
+          - What's the going rate for the {product_name} in your shop?
+          - Could you let me know the price of the {product_name} in your store?
+          - How much does the {product_name} cost in your shop?
+          - Can you tell me the current price of the {product_name} in your store?
+          - What is the price tag of the {product_name} in your shop?
+          - How much should I expect to pay for the {product_name} in your store?
+          - What's the price range for the {product_name} in your shop?
+          - What's the ballpark figure for the {product_name} in your store?
+          - How much does the {product_name} typically cost in your shop?
+          - What's the retail price of the {product_name} in your store?
+          - How much would I have to pay for the {product_name}?
+          - How expensive is the {product_name}?
+          - Can you give me a quote for the {product_name}?
+          - What is the asking price for the {product_name}?
+          - What is the listed price for the {product_name}?
+          - I am interested in buying the {product_name}, what is the price?
+          - Can you let me know how much the {product_name} costs?
+          - Could you please provide me with the price of the {product_name}?
+          - What is the cost of the {product_name} per unit?
+          - What is the rate of the {product_name}?
+          - What is the cost of the {product_name} including tax?
+          - How much do I need to spend to buy the {product_name}?
+          - Can you inform me about the {product_name} price?
+          - How much is the {product_name} being sold for?
+          - What is the price tag for the {product_name}?
+          - How much is the {product_name} priced at?
+          - What is the {product_name} selling for?
+          - Can you give me the cost of the {product_name}?
+          - What is the amount I need to pay for the {product_name}?
+          - What is the selling price of the {product_name}?
+          - What is the retail price for the {product_name}?
+          - Can you tell me the price of the {product_name} in USD?
+          - Can you inform me about the current price of the {product_name}?
+          - How much money do I need to buy the {product_name}?
+          - How much does one unit of the {product_name} cost?
+          - Could you please give me the {product_name} price range?
+          - What is the minimum and maximum cost of the {product_name}?
+          - What is the price of the {product_name} without tax?
+          - How much does the {product_name} cost per item?
+          - Can you provide me with the {product_name} price list?
+          - What is the cost of the {product_name} after discount?
+          - How much discount is available on the {product_name}?
+          - Is there any special price for the {product_name} currently?
+          - Can you give me the discounted price for the {product_name}?
+          - What is the price of the {product_name} after the discount?
+          - What is the cost of the {product_name} after the sale?
+          - How much can I save on the {product_name} if I buy it now?
+          - Can you inform me about any offers available on the {product_name}?
+          - What is the price of the {product_name} after the offer?
+          - Can you give me a breakdown of the {product_name} pricing?
+          - Can you provide me with the {product_name} price sheet?
+          - What is the cost of the {product_name} for bulk orders?
+          - How much would it cost to order {quantity} units of the {product_name}?
+          - Can you give me the price of the {product_name} for {quantity} units?
+          - How much discount is available for bulk orders of the {product_name}?
+          - Can you give me the discounted price for {quantity} units of the {product_name}?
+          - How much would it cost to order the {product_name} with expedited shipping?
+          - Can you give me the cost of the {product_name} with international shipping?
+          - How much does the {product_name} cost with overnight shipping?
+          - Can you tell me the cost of the {product_name} with standard shipping?
+          - What is the price of the {product_name} including shipping charges?
+          - Can you give me the final price of the {product_name} after all charges?
+          - How much would it cost to get the {product_name} delivered to my location?
+          - Can you tell me the price of the {product_name} with local taxes included?
+          - What is the price of the {product_name} with state taxes included?
+          - How much do I need to pay for the {product_name}?
+          - Could you give me a quote for the {product_name}?
+          - What is the cost of the {product_name} at the moment?
+          - I'm interested in buying the {product_name}, how much does it cost?
+          - Do you have any special pricing for the {product_name}?
+          - What is the price range for the {product_name}?
+          - Can you provide me with the current price for the {product_name}?
+          - I'm considering purchasing the {product_name}, what's the price?
+          - Is the price of the {product_name} negotiable?
+          - How much does it cost to buy the {product_name}?
+          - What's the asking price for the {product_name}?
+          - How much does the {product_name} retail for?
+          - Can you give me an estimate for the cost of the {product_name}?
+          - What is the selling price for the {product_name}?
+          - What's the market price for the {product_name}?
+          - How much will I need to pay for the {product_name}?
+          - What is the price tag on the {product_name}?
+          - Could you tell me the value of the {product_name}?
+          - What is the worth of the {product_name}?
+          - How much does the {product_name} go for these days?
+          - What is the rate for the {product_name}?
+          - How much does the {product_name} sell for?
+          - Can you tell me the purchase price of the {product_name}?
+          - I'd like to know the cost of the {product_name}, could you help me?
+          - What's the price of the {product_name} in your store?
+          - Could you give me a price range for the {product_name}?
+          - How much is the {product_name} priced at?
+          - Can you provide me with the price point for the {product_name}?
+          - What is the price for the {product_name} right now?
+          - I'm curious about the price of the {product_name}, could you give me more information?
+          - Could you tell me the fee for the {product_name}?
+          - How much does the {product_name} cost these days?
+          - I'd like to know the asking price for the {product_name}.
+          - Can you let me know the selling price of the {product_name}?
+          - What's the cost of the {product_name} currently?
+          - I'm interested in the {product_name}, how much does it cost?
+          - Can you inform me about the {product_name}'s price?
+          - How much money should I expect to spend on the {product_name}?
+          - What's the pricing for the {product_name} like?
+          - Can you give me an idea of how much the {product_name} costs?
+          - I'd like to know the price of the {product_name}, could you tell me?
+          - What is the cost of the {product_name} in your shop?
+          - How much does the {product_name} go for at the moment?
+          - Can you provide me with the cost of the {product_name}?
+          - What is the current asking price for the {product_name}?
+          - I'd like to get a quote for the {product_name}, what's the price?
+          - What's the price tag for the {product_name} right now?
+          - How much does the {product_name} cost at retail?
+          - What's the rate for the {product_name} these days?
+          - Can you tell me the asking price for the {product_name}?
+          - I'm interested in the {product_name}, could you let me know the price?
+          - What's the cost of the {product_name} at the moment?
+          - Can you provide me with the purchase price of the {product_name}?
+          - How much does the {product_name} retail for at your store?
+          - Can you tell me how much the [iPhone 12](product_name) costs?
+          - What's the price of the [MacBook Pro](product_name)?
+          - Could you let me know the cost of the [Samsung Galaxy S20](product_name)?
+          - How much does the [PlayStation 5](product_name) cost?
+          - Can you give me the price of the [Dell XPS 13](product_name)?
+          - What is the cost of the [Bose QuietComfort 35 II](product_name) headphones?
+          - Could you tell me the price of the [Google Pixel 5](product_name)?
+          - How much does the [Nintendo Switch](product_name) cost?
+          - What's the price of the [Canon EOS R5](product_name) camera?
+          - Can you tell me how much the [Samsung Galaxy Note 20 Ultra](product_name) costs?
+          - What is the cost of the [Apple Watch Series 6](product_name)?
+          - How much does the [Microsoft Surface Laptop 4](product_name) cost?
+          - Can you give me the price of the [Sony WH-1000XM4](product_name) headphones?
+          - What's the price of the [Samsung QLED Q80T](product_name) TV?
+          - Could you let me know the cost of the [Sony PlayStation VR](product_name)?
+          - How much does the [HP Spectre x360](product_name) cost?
+          - Can you tell me how much the [LG CX OLED](product_name) TV costs?
+          - What is the cost of the [Bose SoundLink Revolve+](product_name) speaker?
+          - How much does the [Asus ROG Zephyrus G14](product_name) cost?
+          - What's the price of the [Apple iPad Air](product_name)?
+          - Could you give me the price of the [Samsung Galaxy Watch3](product_name)?
+          - Can you let me know the cost of the [Amazon Echo Dot](product_name)?
+          - What is the price of the [Google Nest Audio](product_name)?
+          - How much does the [Fitbit Versa 3](product_name) cost?
+          - What's the price of the [LG Gram 17](product_name) laptop?
+          - Could you tell me the cost of the [Bose QuietComfort Earbuds](product_name)?
+          - Can you give me the price of the [OnePlus 8T](product_name) phone?
+          - What is the cost of the [Xbox Series X](product_name)?
+          - How much does the [Samsung Odyssey G9](product_name) gaming monitor cost?
+          - What's the price of the [Dyson Cyclone V10 Absolute](product_name) vacuum cleaner?
+          - Could you let me know the price of the [Sony A7 III](product_name) camera?
+          - How much does the [Apple iPhone SE](product_name) cost?
+          - Can you tell me how much the [LG CX 48](product_name) OLED TV costs?
+          - What is the price of the [Razer Blade 15](product_name) gaming laptop?
+          - How much does the [Nikon Z6 II](product_name) camera cost?
+          - What's the cost of the [Sennheiser Momentum 3 Wireless](product_name) headphones?
+          - Could you give me the price of the [Samsung Galaxy Tab S7](product_name)?
+          - What is the cost of the [Lenovo Yoga C940](product_name) laptop?
+          - How much does the [Jabra Elite 85t](product_name) headphones cost?
+
+    - intent: complain
+      examples: |
+          - I'm really unhappy with your service
+          - I'm extremely disappointed with what happened
+          - This is not what I expected at all
+          - I have a complaint about my recent purchase
+          - I would like to express my dissatisfaction
+          - I need to talk to someone about my issue
+          - I am not satisfied with the quality of the product
+          - This is unacceptable
+          - I want to file a complaint
+          - I am very upset with what happened
+          - I'm not pleased with the way this was handled
+          - I'm really frustrated with your company
+          - This is a total mess
+          - I am not happy with the level of service I received
+          - I need to report a problem
+          - I'm disappointed with how this was handled
+          - I want to speak to a manager about this
+          - I'm very dissatisfied with the outcome
+          - This is not what I paid for
+          - I demand to be compensated for this
+          - I need a refund for this terrible experience
+          - I want to lodge a complaint about your product
+          - This is not the quality I expected
+          - I am completely dissatisfied with your service
+          - I'm not happy with the way I was treated
+          - This is outrageous
+          - I'm extremely angry about this situation
+          - I need to complain about your customer service
+          - This is not what I was promised
+          - I'm disappointed in the way this was handled
+          - I need to express my frustration
+          - I want to report a problem with my order
+          - I'm very dissatisfied with the product I received
+          - I'm not happy with the resolution provided
+          - This is unacceptable customer service
+          - I'm not satisfied with how this was resolved
+          - I want a full refund for this terrible experience
+          - This is not what I signed up for
+          - I'm really disappointed with the service I received
+          - I need to escalate this complaint
+          - I'm not happy with the product quality
+          - This is a terrible experience
+          - I want to speak to someone higher up about this
+          - I'm extremely dissatisfied with your company
+          - I need to make a complaint about your service
+          - I'm not pleased with the way my issue was handled
+          - This is a serious problem
+          - I'm very unhappy with what happened
+          - I want to lodge a complaint about your service
+          - I'm disappointed with the level of customer service
+          - I need to express my disappointment
+          - I'm not happy with the response I received
+          - This is a terrible service
+          - I'm very dissatisfied with the way my issue was handled
+          - I want to escalate this to a higher authority
+          - I'm really angry about this situation
+          - I need to make a formal complaint
+          - I'm not satisfied with the resolution provided
+          - This is not acceptable
+          - I'm disappointed with the quality of the product
+          - I want a refund for this bad experience
+          - I'm extremely frustrated with your company
+          - I need to talk to someone about this immediately
+          - I'm not happy with the level of support provided
+          - This is not what I was expecting
+          - I'm very dissatisfied with the service I received
+          - I want to report a problem with your product
+          - This is unacceptable behavior
+          - I'm not satisfied with how my issue was resolved
+          - I want a compensation for this terrible service
+          - I'm disappointed with the customer service I received
+          - I need to escalate this issue
+          - I'm not happy with the outcome of my complaint
+          - This is not what I paid for and I want a refund
+          - I'm very dissatisfied with the product quality
+          - I'm not pleased with the way my problem was handled
+          - I'm really frustrated with the service I received.
+          - I'm very disappointed with how things turned out.
+          - This is unacceptable and I want to speak to a manager.
+          - I can't believe how poorly this was handled.
+          - This is not what I expected at all.
+          - I'm very unhappy with this situation.
+          - I feel like I've been treated unfairly.
+          - I have a complaint about the product/service I received.
+          - This is not the quality I was promised.
+          - I'm dissatisfied with the way things were handled.
+          - I'm not satisfied with the outcome of this situation.
+          - This is not what I paid for.
+          - I'm not happy with the customer service I received.
+          - This is not the first time I've had an issue with this company.
+          - I need to speak to someone about a problem I'm having.
+          - I'm having an issue with my order.
+          - This is not the level of service I expected.
+          - I have a problem with the product/service I received.
+          - I want to file a complaint.
+          - I'm not happy with the way I was treated.
+          - I am very unhappy with the service I received.
+          - This is unacceptable. I demand to speak to a supervisor.
+          - I want a refund immediately. This product is faulty.
+          - I am extremely dissatisfied with the way this situation was handled.
+          - I have been waiting for hours and no one has bothered to assist me.
+          - I am disappointed with the quality of this product.
+          - This is not what I ordered. I want a full refund.
+          - I have been overcharged and I want my money back.
+          - I cannot believe how poorly this was handled.
+          - I am very dissatisfied with the level of customer service I have received.
+          - This is completely unacceptable. I demand a resolution.
+          - I am very disappointed in this company.
+          - This is not what I paid for. I want a refund.
+          - I have never experienced such poor service before.
+          - I am not satisfied with the way this situation was resolved.
+          - This product is defective and I want a replacement or refund.
+          - I cannot believe the lack of professionalism displayed here.
+          - I am very upset with the way this has been handled.
+          - This is a complete waste of my time and money.
+          - I will be leaving a negative review due to the poor service I have received.
+          - I'm extremely frustrated with the service I received.
+          - This is unacceptable. I demand to speak to a manager.
+          - I'm really disappointed with the quality of the product.
+          - I feel like I've been cheated.
+          - This is not what I paid for.
+          - I'm not satisfied with the level of customer service I received.
+          - I've had enough of this terrible experience.
+          - This is a complete waste of my time.
+          - I'm fed up with the constant problems.
+          - This is absolutely ridiculous.
+          - I'm extremely dissatisfied with how this was handled.
+          - I'm really upset about this.
+          - I'm tired of the runaround.
+          - I'm not happy with the way things have been handled.
+          - This is the worst service I've ever experienced.
+          - I'm very disappointed in this company.
+          - I want my money back.
+          - This is a complete and utter mess.
+          - I've never been treated so poorly by a company.
+          - I feel like I've been taken advantage of.
+          - I'm appalled by the lack of professionalism.
+          - I can't believe how poorly this was handled.
+          - This is not what I was promised.
+          - I've had enough of the excuses.
+          - I'm incredibly dissatisfied with this experience.
+          - I'm extremely unhappy with the way this has been handled.
+          - I'm very frustrated with the lack of resolution.
+          - This is not how you treat paying customers.
+          - I'm beyond upset with this situation.
+          - I'm not willing to put up with this any longer.
+          - This is completely unacceptable.
+          - I'm really dissatisfied with the level of service.
+          - I feel like I've been misled.
+          - I'm not happy with how this was resolved.
+          - This is an absolute joke.
+          - I've had enough of the incompetence.
+          - I'm appalled by the lack of accountability.
+          - I can't believe how poorly this has been handled.
+          - I'm extremely disappointed with this experience.
+          - I'm very dissatisfied with the response I received.
+          - This is not how you run a business.
+          - I'm not satisfied with the way my issue was handled.
+          - I'm fed up with the poor communication.
+          - I'm beyond frustrated with this situation.
+          - I'm really unhappy with the way this has been handled.
+          - I feel like I've been ignored.
+          - This is not the level of service I expect.
+          - I'm appalled by the lack of concern.
+          - I can't believe how poorly this has been handled.
+          - I'm extremely dissatisfied with the outcome.
+          - I'm very disappointed in the way this was handled.
+          - This is not what I signed up for.
+          - I'm not happy with the lack of action.
+          - This is not the way to treat a customer.
+          - I'm fed up with the constant issues.
+          - I'm beyond angry about this situation.
+          - I'm really upset with the lack of follow-up.
+          - I feel like I've been brushed aside.
+          - This is not what I expected.
+          - I'm appalled by the lack of respect.
+          - I can't believe how poorly this has been handled.
+          - I'm extremely frustrated with the lack of progress.
+          - I'm very dissatisfied with the customer service.

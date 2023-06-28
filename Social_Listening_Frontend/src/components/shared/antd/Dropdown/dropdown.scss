@@ -1,0 +1,26 @@
+.cb-dropdown-overlay {
+  .ant-dropdown-menu {
+    .ant-dropdown-menu-item {
+      padding: 0;
+      // padding: 0.4rem 0.8rem;
+
+      .cb-dropdown-wrapper {
+        padding: 0.4rem 0.8rem;
+
+        // .cb-dropdown span {
+        //   padding: 0;
+
+        //   .cb-dropdown-item {
+        //     margin-left: 0.8rem;
+        //   }
+        // }
+      }
+    }
+
+    .ant-dropdown-menu-item-selected {
+      .cb-dropdown-item {
+        color: #1677ff;
+      }
+    }
+  }
+}

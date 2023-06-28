@@ -1,0 +1,11 @@
+venv
+venv2
+uploads
+models
+.rasa
+out.log
+
+*/__pycache__/
+/__pycache__
+/test
+new_data.yaml

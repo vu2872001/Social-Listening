@@ -1,0 +1,250 @@
+:root {
+  --primary-color: #1677ff;
+  --light-primary-color: #4096ff;
+  --gray-layout-color: #f5f5f5;
+  --success-color: #28a745;
+  --warning-color: #ff9800;
+  --error-color: #da4c3b;
+
+  --padding-layout: 1.6rem;
+  --app-font-size: 1.6rem;
+  --border-style: 1px solid #dedede;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: var(--app-font-size) !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+}
+
+a {
+  text-decoration: none;
+  color: var(--light-primary-color);
+
+  &:hover {
+    text-decoration: underline;
+    color: var(--primary-color);
+  }
+}
+
+// #region custom class
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.absolute-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-height-screen {
+  height: 100vh;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.long-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.limit-line {
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--line);
+}
+
+.redirect-btn {
+  width: 12rem;
+}
+// #endregion
+
+// #region config antd,
+.ant-spin-nested-loading {
+  width: 100%;
+}
+
+.ant-layout {
+  .ant-layout-header {
+    font-size: 1.6rem;
+  }
+
+  .ant-layout-content {
+    font-size: var(--app-font-size);
+  }
+}
+
+button.ant-btn {
+  font-size: var(--app-font-size);
+  height: 3.6rem;
+
+  &.ant-btn-circle {
+    width: 3.6rem;
+  }
+}
+
+.ant-alert,
+.ant-pagination,
+tbody.ant-table-tbody,
+input.ant-input {
+  font-size: var(--app-font-size);
+}
+
+.ant-input-suffix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .ant-input-clear-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .anticon {
+      font-size: var(--app-font-size);
+    }
+  }
+  .anticon {
+    font-size: calc(var(--app-font-size) + 0.4rem);
+  }
+}
+
+.ant-dropdown {
+  .ant-dropdown-menu {
+    .ant-dropdown-menu-item {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+ul.ant-menu.ant-menu-root {
+  li.ant-menu-item {
+    // padding-left: 0.8rem;
+    .anticon {
+      font-size: 2rem;
+    }
+  }
+
+  li.ant-menu-submenu {
+    .anticon {
+      font-size: 2rem;
+    }
+  }
+}
+.ant-menu-title-content {
+  font-size: 1.8rem;
+}
+
+.ant-form-item {
+  .ant-form-item-explain-error {
+    font-size: 1.2rem;
+  }
+}
+
+.ant-avatar {
+  background-color: var(--primary-color);
+  font-size: var(--app-font-size);
+  text-transform: capitalize;
+}
+
+.ant-notification-notice {
+  .ant-notification-notice-content {
+    .ant-notification-notice-message,
+    .ant-notification-notice-description {
+      color: #fff;
+    }
+
+    .ant-notification-notice-message {
+      font-size: 2rem;
+    }
+
+    .ant-notification-notice-description {
+      font-size: 1.5rem;
+    }
+
+    .ant-notification-notice-icon {
+      margin-top: 0.4rem;
+      color: #fff;
+    }
+  }
+
+  .ant-notification-notice-close {
+    color: #fff;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.ant-badge.ant-badge-status {
+  .ant-badge-status-dot {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.ant-picker {
+  .ant-picker-input {
+    font-size: var(--app-font-size);
+
+    input {
+      font-size: var(--app-font-size);
+    }
+  }
+}
+// #endregion
+
+// #region custom scrollb ar
+/* width */
+::-webkit-scrollbar {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+/* track */
+::-webkit-scrollbar-track {
+  // border-radius: 0.4rem;
+}
+
+/* handle */
+::-webkit-scrollbar-thumb {
+  background-color: #cecece;
+  border-radius: 0.4rem;
+}
+
+/* handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #bdbdbd;
+}
+// #endregion

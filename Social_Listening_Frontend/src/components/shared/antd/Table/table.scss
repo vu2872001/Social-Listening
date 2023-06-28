@@ -1,0 +1,112 @@
+.table-toolbars {
+  justify-content: left !important;
+  padding: 1.6rem 0;
+  gap: 0.8rem;
+}
+
+.table-utils {
+  justify-content: right !important;
+  border-top: 1px solid rgb(240 240 240);
+  border-bottom: 1px solid rgb(240 240 240);
+  height: 4rem;
+  padding: 0 2rem;
+  gap: 1.6rem;
+
+  .table-utils-icon {
+  }
+}
+
+.import-content {
+  height: 90%;
+  margin-top: 2.8rem;
+
+  .first-step {
+    flex-direction: column;
+    gap: 2.4rem;
+
+    .import-hint {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+
+  .mapped-row {
+    height: 5rem;
+    justify-content: start;
+    gap: 0.4rem;
+  }
+
+  .required-column {
+    &::after {
+      content: '*';
+    }
+  }
+
+  .error-column {
+    color: var(--error-color);
+  }
+}
+
+.ant-table-thead {
+  height: 6rem;
+
+  .ant-table-cell {
+    background-color: #fff !important;
+  }
+
+  .table-header {
+    font-size: var(--app-font-size);
+    gap: 0.6rem;
+
+    .table-filter-icon {
+      font-size: 2rem;
+
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+
+    .table-sorter {
+      font-size: 1rem;
+      flex-direction: column;
+
+      #sort-ascending,
+      #sort-descending {
+        height: 0.8rem;
+      }
+    }
+
+    .table-sorter.no-action {
+      color: #b1b1b1;
+    }
+  }
+
+  .react-resizable {
+    position: relative;
+
+    .react-resizable-handle {
+      position: absolute;
+      width: 0.3rem;
+      height: 100%;
+      bottom: 0;
+      right: -1px;
+      cursor: e-resize;
+      z-index: 999;
+    }
+  }
+}
+
+.ant-table-tbody {
+  .table-action-icon {
+    .anticon {
+      transform: scale(1.3);
+    }
+  }
+}
+
+.table-total-items {
+  position: absolute;
+  left: 0;
+  font-style: italic;
+}

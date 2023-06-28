@@ -1,0 +1,36 @@
+version: '3.1'
+
+stories:
+    - story: Ask price of product name
+      steps:
+          - intent: greet
+          - action: utter_greet
+          - intent: introduce_name
+          - action: utter_introduce_name
+          - intent: ask_price
+          - action: utter_answer_price
+          - intent: complain
+          - action: utter_sorry
+          - intent: goodbye
+          - action: utter_goodbye
+    # stories:
+    #     # - story: Chào hỏi
+    #     #   steps:
+    #     #       - intent: greet
+    #     #       - action: utter_ask_name
+    #     #       - intent: answer_price
+    #     #       - action: utter_greet_with_name
+    #     #       - intent: goodbye
+    #     #       - action: utter_goodbye_with_name
+    - story: Get user info
+      steps:
+          - intent: greet
+          # - action: action_get_link
+          - action: utter_greet
+          - intent: ask_price
+          - action: utter_answer_price
+          - intent: complain
+          - action: utter_sorry
+          - intent: goodbye
+          - action: utter_goodbye
+#            greet, goodbye, introduce_name, ask_price, complain có sử dụng entity user_name, product_name và tạo utter trả lời câu hỏi

@@ -1,0 +1,199 @@
+:root {
+  --padding-sider: 0 1.2rem;
+}
+
+.hotqueue-layout {
+  min-height: 100vh;
+
+  .ant-layout-sider {
+    background-color: #fff;
+    border-right: var(--border-style);
+
+    .ant-layout-sider-children {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      padding: 0.8rem 0;
+      height: 100vh;
+
+      #title {
+        padding: var(--padding-sider);
+        font-size: calc(var(--app-font-size) + 1.2rem);
+      }
+
+      .search-user {
+        padding: var(--padding-sider);
+
+        .ant-input {
+          font-size: calc(var(--app-font-size) + 2px);
+        }
+        .ant-input-group-addon {
+          button {
+            height: 38px;
+
+            .anticon {
+              font-size: 1.8rem;
+            }
+          }
+        }
+      }
+
+      .ant-divider {
+        margin: 0;
+      }
+
+      .hotqueue-list {
+        margin: -1.2rem 0;
+        padding: 0;
+        list-style: none;
+        max-height: 89%;
+        min-height: 89%;
+        overflow-y: scroll;
+
+        .ant-spin {
+          width: 100%;
+          height: calc(100vh - 20rem);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          max-height: unset;
+        }
+
+        .anticon-loading {
+          scale: 4;
+        }
+
+        .hotqueue-block-container {
+          padding: 1.2rem;
+          border-radius: 0.6rem;
+          font-size: var(--app-font-size);
+          margin: var(--padding-sider);
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          &.selected,
+          &:hover {
+            background-color: rgb(234, 243, 255);
+          }
+
+          .hotqueue-block {
+            flex: 1;
+          }
+
+          --line: 1;
+          .hotqueue-user-name {
+            font-size: calc(var(--app-font-size) + 0.2rem);
+          }
+
+          .last-message {
+            display: flex;
+            align-items: center;
+            color: grey;
+            gap: 0.4rem;
+
+            .last-date-sent {
+              min-width: 18rem;
+            }
+
+            .limit-line {
+              width: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .hotqueue-header {
+    background-color: #fff;
+    height: 4.4rem;
+    padding: 0 0.8rem;
+    display: flex;
+    border-bottom: var(--border-style);
+
+    .name {
+      flex: 1;
+      font-size: calc(var(--app-font-size) + 4px);
+    }
+
+    .header-utils {
+      gap: 0.4rem;
+    }
+  }
+
+  .ant-layout-content {
+    position: relative;
+
+    .hotqueue-conservation {
+      padding: 1.2rem 0;
+      max-height: 93%;
+      overflow-y: scroll;
+
+      .conservation-container {
+        display: flex;
+        align-items: end;
+        margin-top: 1rem;
+        padding: 0 1.6rem;
+        gap: 0.8rem;
+
+        .conservation-block {
+          max-width: 60%;
+          display: flex;
+          flex-direction: column;
+          gap: 0.4rem;
+
+          .conservation-text {
+            border-radius: 1rem;
+            padding: 1rem;
+            width: fit-content;
+          }
+        }
+      }
+    }
+
+    .hotqueue-footer {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      background-color: #fff;
+      width: 100%;
+      padding: 1.2rem 0.8rem;
+      left: 0;
+      bottom: 0;
+      gap: 0.8rem;
+      border-top: var(--border-style);
+
+      .hotqueue-respond {
+        font-size: calc(var(--app-font-size) + 0.2rem);
+        background-color: var(--gray-layout-color);
+
+        .ant-input {
+          background-color: var(--gray-layout-color);
+        }
+      }
+    }
+  }
+
+  .hotqueue-content {
+    margin-top: 0;
+    background-color: #fff;
+    border-right: var(--border-style);
+
+    .ant-alert {
+      margin: var(--padding-layout);
+    }
+
+    .message-container {
+      padding-top: 0;
+
+      .message-detail {
+        width: 100%;
+
+        .ant-spin-container {
+          height: calc(100vh - 9rem);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+
+            // channelData: {
+            //     clientActivityID: "16608948517664tng3lceo04",
+            //     clientTimestamp: "2022-08-19T07:40:51.766Z",
+            // },
+            text: webhook_event.message.text,
+            textFormat: "plain",
+            type: "message",
+            channelId: "facebook",
+            from: {
+                id: webhook_event.sender.id,
+                name: "User",
+                role: "user",
+            },
+            // locale: "en-US",
+            // localTimestamp: "2022-08-19T14:40:51+07:00",
+            // localTimezone: "Asia/Saigon",
+            // timestamp: "2022-08-19T07:40:51.782Z",
+            // entities: [
+            //     {
+            //         requiresBotState: true,
+            //         supportsListening: true,
+            //         supportsTts: true,
+            //         type: "ClientCapabilities",
+            //     },
+            // ],
+            conversation: {
+                id: webhook_event.sender.id,
+            },
+            // id: "40009660-1f92-11ed-89e6-e96a589ab967",
+            // recipient: {
+            // id: "95b38cf0-1f8f-11ed-b106-4b313e195b01",
+            // name: "Bot",
+            // role: "bot",
+            // },
+            serviceUrl: "http://localhost:8080/messageFB",

@@ -1,0 +1,367 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Gender {
+  Male
+  Female
+  Other
+}
+
+model Role {
+  id              String            @id @default(uuid())
+  roleName        String
+  level           Int               @default(1)
+  User            User[]
+  Role_Permission Role_Permission[]
+  UserInTab       UserInTab[]
+}
+
+model User {
+  id             String           @id @default(uuid())
+  email          String
+  userName       String
+  fullName       String
+  phoneNumber    String?
+  refreshToken   String?
+  password       String
+  role           Role             @relation(fields: [roleId], references: [id])
+  roleId         String
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  deleteAt       Boolean          @default(false)
+  isActive       Boolean          @default(false)
+  gender         Gender           @default(Other)
+  socialGroup    SocialGroup?
+  UserInGroup    UserInGroup[]
+  File           File[]
+  Notification   Notification[]
+  UserInTab      UserInTab[]
+  UserInHotQueue UserInHotQueue[]
+
+  @@index([email])
+  @@index([refreshToken])
+}
+
+model Setting {
+  id    String @id @default(uuid())
+  group String
+  key   String
+  value String
+}
+
+model Permission {
+  id              String            @id @default(uuid())
+  displayName     String
+  permission      String
+  screen          String
+  deleted         Boolean           @default(false)
+  Role_Permission Role_Permission[]
+}
+
+model Role_Permission {
+  role         Role       @relation(fields: [roleId], references: [id])
+  roleId       String
+  permission   Permission @relation(fields: [permissionId], references: [id])
+  permissionId String
+
+  @@id([roleId, permissionId])
+}
+
+model Token {
+  id          String   @id @default(uuid())
+  token       String
+  dateExpires DateTime @default(now())
+  deleted     Boolean  @default(false)
+}
+
+model ActivityLog {
+  id           Int      @id @default(autoincrement())
+  activityType String?
+  userName     String
+  objName      String?
+  objId        String?
+  refName      String?
+  refId        String?
+  dateCreate   DateTime @default(now())
+}
+
+model SocialGroup {
+  id          String        @id @default(uuid())
+  name        String
+  manager     User          @relation(fields: [managerId], references: [id])
+  managerId   String        @unique
+  extendData  String?
+  SocialTab   SocialTab[]
+  UserInGroup UserInGroup[]
+  File        File[]
+}
+
+model SocialTab {
+  id               String             @id @default(uuid())
+  name             String
+  group            SocialGroup        @relation(fields: [groupId], references: [id])
+  groupId          String
+  delete           Boolean            @default(false)
+  isWorked         Boolean            @default(false)
+  createdAt        DateTime           @default(now())
+  extendData       String?
+  UserInTab        UserInTab[]
+  SocialNetwork    SocialNetwork      @relation(fields: [socialId], references: [id])
+  socialId         String             @unique
+  SocialTabLog     SocialTabLog[]
+  SocialPost       SocialPost[]
+  SocialTabSetting SocialTabSetting[]
+  Workflow         Workflow[]
+  Message          Message[]
+  SocialMessage    SocialMessage[]
+  UserInHotQueue   UserInHotQueue[]
+  HotQueueMessage  HotQueueMessage[]
+}
+
+model SocialNetwork {
+  id         String     @id @default(uuid())
+  socialType String
+  name       String
+  extendData String?
+  delete     Boolean    @default(false)
+  socialTab  SocialTab?
+}
+
+model UserInGroup {
+  id       Int         @id @default(autoincrement())
+  user     User        @relation(fields: [userId], references: [id])
+  userId   String
+  group    SocialGroup @relation(fields: [groupId], references: [id])
+  groupId  String
+  joinAt   DateTime    @default(now())
+  delete   Boolean     @default(false)
+  isActive Boolean     @default(true)
+}
+
+model UserInTab {
+  id        Int       @id @default(autoincrement())
+  user      User      @relation(fields: [userId], references: [id])
+  userId    String
+  socialTab SocialTab @relation(fields: [tabId], references: [id])
+  tabId     String
+  role      Role      @relation(fields: [roleId], references: [id])
+  roleId    String
+  joinAt    DateTime  @default(now())
+  delete    Boolean   @default(false)
+}
+
+model File {
+  id        String      @id @default(uuid())
+  fileName  String
+  fileExt   String
+  path      String
+  owner     User        @relation(fields: [ownerId], references: [id])
+  ownerId   String
+  group     SocialGroup @relation(fields: [groupId], references: [id])
+  groupId   String
+  minetype  String
+  createdAt DateTime    @default(now())
+}
+
+model Notification {
+  id         Int      @id @default(autoincrement())
+  title      String?
+  body       String?
+  maxAttempt Int      @default(5)
+  duration   Int      @default(5000)
+  user       User     @relation(fields: [userId], references: [id])
+  userId     String
+  type       String
+  status     String   @default("Sent")
+  isClick    Boolean  @default(false)
+  refType    String?
+  refId      String?
+  extendData String?
+  createdAt  DateTime @default(now())
+}
+
+model SocketConnection {
+  userId      String @id
+  socketToken String
+}
+
+model SocialTabLog {
+  id         Int       @id @default(autoincrement())
+  tab        SocialTab @relation(fields: [tabId], references: [id])
+  tabId      String
+  title      String
+  body       String
+  activity   String
+  extendData String?
+  createAt   DateTime  @default(now())
+}
+
+model SocialPost {
+  id           String    @id @default(uuid())
+  socialTab    SocialTab @relation(fields: [tabId], references: [id])
+  tabId        String
+  postId       String
+  message      String
+  permalinkUrl String
+  createdAt    DateTime
+
+  @@index([tabId])
+}
+
+model SocialSender {
+  id                     String            @id @default(uuid())
+  type                   String
+  senderId               String
+  fullName               String
+  avatarUrl              String
+  SocialMessage          SocialMessage[]
+  MessageSent            Message[]         @relation("sender")
+  MessageReceive         Message[]         @relation("recipient")
+  UserInHotQueue         UserInHotQueue[]
+  HotQueueMessageSent    HotQueueMessage[] @relation("sender")
+  HotQueueMessageReceive HotQueueMessage[] @relation("recipient")
+}
+
+model SocialMessage {
+  id        String       @id @default(uuid())
+  tabId     String
+  message   String
+  senderId  String
+  createdAt DateTime
+  type      String
+  messageId String
+  parentId  String
+  sentiment Float?
+  isRead    Boolean      @default(false)
+  tab       SocialTab    @relation(fields: [tabId], references: [id])
+  sender    SocialSender @relation(fields: [senderId], references: [id])
+
+  @@index([isRead])
+  @@index([parentId])
+}
+
+model Message {
+  id             String           @id @default(uuid())
+  sender         SocialSender     @relation("sender", fields: [senderId], references: [id])
+  recipient      SocialSender     @relation("recipient", fields: [recipientId], references: [id])
+  socialTab      SocialTab        @relation(fields: [tabId], references: [id])
+  senderId       String
+  recipientId    String
+  tabId          String
+  message        String
+  messageId      String
+  sentiment      Float?
+  createdAt      DateTime
+  RootMessage    MessageReplied[] @relation("messageReplied")
+  MessageReplied MessageReplied[] @relation("message")
+}
+
+model MessageReplied {
+  messageId        String
+  messageRepliedId String
+  message          Message @relation("message", fields: [messageId], references: [id])
+  messageReplied   Message @relation("messageReplied", fields: [messageRepliedId], references: [id])
+
+  @@id([messageId, messageRepliedId])
+}
+
+model SocialTabSetting {
+  id        Int       @id @default(autoincrement())
+  socialTab SocialTab @relation(fields: [tabId], references: [id])
+  tabId     String
+  group     String
+  key       String
+  value     String
+}
+
+model Workflow {
+  id               String             @id @default(uuid())
+  socialTab        SocialTab?         @relation(fields: [tabId], references: [id])
+  tabId            String?
+  name             String
+  type             String             @default("Comment")
+  delete           Boolean            @default(false)
+  extendData       String?
+  isActive         Boolean            @default(false)
+  createAt         DateTime           @updatedAt()
+  WorkflowEdge     WorkflowEdge[]
+  WorkflowNode     WorkflowNode[]
+  WorkflowVariable WorkflowVariable[]
+  WorkflowData     WorkflowData[]
+}
+
+model WorkflowVariable {
+  id               String   @id @default(uuid())
+  flow             Workflow @relation(fields: [flowId], references: [id])
+  flowId           String
+  variableName     String
+  variableValue    String?
+  variableDataType String?
+}
+
+model WorkflowNode {
+  id         String   @id
+  flow       Workflow @relation(fields: [flowId], references: [id])
+  flowId     String
+  type       String
+  position_X Int
+  position_Y Int
+  data       String
+}
+
+model WorkflowEdge {
+  id         String   @id
+  flow       Workflow @relation(fields: [flowId], references: [id])
+  flowId     String
+  sourceId   String
+  sourceName String
+  targetId   String
+  targetName String
+}
+
+model WorkflowData {
+  id        String   @id @default(uuid())
+  flow      Workflow @relation(fields: [flowId], references: [id])
+  flowId    String
+  messageId String
+  data      String
+}
+
+model UserInHotQueue {
+  id          String       @id @default(uuid())
+  senderId    String
+  type        String
+  userId      String?
+  tabId       String
+  messageType String
+  tab         SocialTab    @relation(fields: [tabId], references: [id])
+  supporter   User?        @relation(fields: [userId], references: [id])
+  sender      SocialSender @relation(fields: [senderId], references: [id])
+  delete      Boolean      @default(false)
+  createdAt   DateTime     @default(now())
+  reason      String?
+}
+
+model HotQueueMessage {
+  id          String       @id @default(uuid())
+  tabId       String
+  messageType String
+  message     String
+  senderId    String
+  recipientId String
+  messageId   String?
+  tab         SocialTab    @relation(fields: [tabId], references: [id])
+  sender      SocialSender @relation("sender", fields: [senderId], references: [id])
+  recipient   SocialSender @relation("recipient", fields: [recipientId], references: [id])
+  delete      Boolean      @default(false)
+  dateCreated DateTime     @default(now())
+}

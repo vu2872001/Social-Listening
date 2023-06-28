@@ -1,0 +1,52 @@
+.auth-wrapper {
+  height: 100%;
+
+  .auth-header {
+    text-align: center;
+
+    .auth-title {
+      margin: 0;
+      letter-spacing: 0.4rem;
+      font-weight: 400;
+      font-size: 4.8rem;
+      line-height: 4.8rem;
+    }
+
+    img {
+      margin-top: 4rem;
+    }
+  }
+
+  .auth-body {
+    font-size: var(--app-font-size);
+    margin-top: 4rem;
+
+    input {
+      font-size: 1.6rem;
+    }
+
+    .forgot-pwd {
+      text-align: right;
+    }
+  }
+
+  .auth-body,
+  .auth-footer {
+    padding: 0 8rem;
+
+    .remember-auth,
+    .submit-auth-btn {
+      font-size: var(--app-font-size);
+    }
+
+    .submit-auth-btn {
+      width: 100%;
+      height: 4rem;
+      margin: 1.4rem 0;
+    }
+
+    .register-redirect {
+      padding-left: 0.4rem;
+    }
+  }
+}

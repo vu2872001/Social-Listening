@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Token" ALTER COLUMN "dateExpires" SET DEFAULT CURRENT_TIMESTAMP;

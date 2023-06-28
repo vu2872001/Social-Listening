@@ -1,0 +1,86 @@
+.role-page-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(32vw, 1fr));
+  gap: 3rem;
+  height: 100% !important;
+  padding: 2rem;
+
+  .ant-card {
+    &:hover {
+      transition: all ease 0.3s;
+      box-shadow: 0px 2px 9.2rem 0px rgb(0 0 0 / 25%);
+      transform: translate(0, -3px);
+    }
+
+    &.owner {
+      border-color: var(--primary-color);
+
+      .ant-card-head {
+        border-color: var(--primary-color);
+        background-color: var(--primary-color);
+      }
+
+      .ant-divider {
+        background-color: var(--primary-color);
+      }
+    }
+
+    &.admin {
+      border-color: var(--error-color);
+
+      .ant-card-head {
+        border-color: var(--error-color);
+        background-color: var(--error-color);
+      }
+
+      .ant-divider {
+        background-color: var(--error-color);
+      }
+    }
+
+    &.manager {
+      border-color: var(--success-color);
+
+      .ant-card-head {
+        border-color: var(--success-color);
+        background-color: var(--success-color);
+      }
+
+      .ant-divider {
+        background-color: var(--success-color);
+      }
+    }
+
+    &.supporter {
+      border-color: #a100a1;
+
+      .ant-card-head {
+        border-color: #a100a1;
+        background-color: #a100a1;
+      }
+
+      .ant-divider {
+        background-color: #a100a1;
+      }
+    }
+
+    .ant-card-head {
+      .ant-card-head-title {
+        font-size: 2.6rem;
+        text-align: center;
+        color: #fff;
+      }
+    }
+
+    .ant-card-body {
+      padding: 2.4rem 0;
+
+      .role-summarize {
+        cursor: pointer;
+        font-size: var(--app-font-size);
+        padding: 0 2.4rem;
+        font-size: 2rem;
+      }
+    }
+  }
+}

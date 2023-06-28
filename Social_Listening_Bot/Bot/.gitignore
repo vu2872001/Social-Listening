@@ -1,0 +1,15 @@
+venv
+venv2
+uploads
+actions
+models
+.rasa
+out.log
+
+*/__pycache__/
+/__pycache__
+/test
+new_data.yaml
+.env
+server_copy.py
+server_test.py
